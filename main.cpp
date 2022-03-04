@@ -15,14 +15,12 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
+int - Integers
+bool - Booleans
+char - Characters
+float - Floating Point
+double - Double Floating Point
+wchar_t - Wide Character
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -62,64 +60,117 @@ video: Chapter 2 - Part 3
 //2)
 void variableDeclarations()
 {
-    //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    // Integers
+    int number = 324;
+    int numberTwo = 2;
+    int i = 0;
+    // Booleans
+    bool doIUnderstandCPPNow = false;
+    bool willIUnderstandCPPLater = true;
+    bool willIMakeCoolJUCEPlugins = true;
+    // Characters
+    char firstInitial = 'j';
+    char middleInitial = 't';
+    char lastInitial = 'n';
+    // Floating Point
+    float floatingNumber = 0.5f;
+    float secondFloatingNumber = 3.14f;
+    float lastNumber = 6.66f;
+    // Double Floating Point
+    double longNumber = 30.245238479823;
+    double diggityDouble = 66.666666666666;
+    double doubleMcDoubleson = 12.34568789;
 
+    ignoreUnused(number, numberTwo, i, doIUnderstandCPPNow, willIUnderstandCPPLater, willIMakeCoolJUCEPlugins, firstInitial, middleInitial, lastInitial, floatingNumber, secondFloatingNumber, lastNumber, longNumber, diggityDouble, doubleMcDoubleson);
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
 }
-
-/*
- 10 functions
- example:
- note: this example shows the result after completing steps 3-8
- */
-bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
-{ 
-    ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
-    return {}; //if your function returns something other than void, add 'return {};' at the end of it.
-} 
 
 /*
  1)
  */
+int calculateAge(int yearIWasBorn)
+{
+    ignoreUnused(yearIWasBorn);
+    return {};
+}
 
 /*
  2)
  */
+bool amIHungry(float hoursSinceILastAte, int foodIAte)
+{
+    ignoreUnused(hoursSinceILastAte, foodIAte);
+    return {};
+}
 
 /*
  3)
  */
+float calculateRevolutionsPerMin(float speedOfCarInMPH = 60.0f, int typeOfCar = 0)
+{
+    ignoreUnused(speedOfCarInMPH, typeOfCar);
+    return {};
+}
 
 /*
  4)
  */
+void paintRoom(int roomToBePainted, int colorToPaint)
+{
+    ignoreUnused(roomToBePainted, colorToPaint);
+}
 
 /*
  5)
  */
+void makeACoolJUCEPlugin(bool hasGoodIdea, bool hasTheRightSkill)
+{
+    ignoreUnused(hasGoodIdea, hasTheRightSkill);
+}
 
 /*
  6)
  */
+float calculateNetWeeklyProfit(float weeklyIncome = 1000.0f, float weeklyExpenses = 500.0f)
+{
+    ignoreUnused(weeklyIncome, weeklyExpenses);
+    return {};
+}
 
 /*
  7)
  */
+void findNewJob(bool hasResume, int numberOfSkills, int previousJobs)
+{
+    ignoreUnused(hasResume, numberOfSkills, previousJobs);
+}
 
 /*
  8)
  */
+int generateSong(char keyOfSong, float songTempo, int styleOfMusic, float songLength)
+{
+    ignoreUnused(keyOfSong, songTempo, styleOfMusic, songLength);
+    return {};
+}
 
 /*
  9)
  */
+char generateRandomLetter(int seed = 0)
+{
+    ignoreUnused(seed);
+    return {};
+}
 
 /*
  10)
  */
+int buyTrainTickets(int numberOfPeople, int destination, float amountOfMoneyYouHave)
+{
+    ignoreUnused(numberOfPeople, destination, amountOfMoneyYouHave);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -138,30 +189,40 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    auto carRented = rentACar(6, 2); 
+    // auto carRented = rentACar(6, 2); 
     
     //1)
+    auto myAge = calculateAge(1989);
     
     //2)
+    auto hunger = amIHungry(5.0, 4);
     
     //3)
+    auto rpm = calculateRevolutionsPerMin();
     
     //4)
+    paintRoom(3, 4);
     
     //5)
+    makeACoolJUCEPlugin(true, false);
     
     //6)
+    auto netWeeklyProfit = calculateNetWeeklyProfit(99999);
     
     //7)
+    findNewJob(true, 4, 2);
     
     //8)
+    auto newSongIdea = generateSong('a', 120.0f, 4, 210.0f);
     
     //9)
+    auto newRandomLetter = generateRandomLetter(123);
     
     //10)
+    auto numOfTicketsBought = buyTrainTickets(2, 5, 10.0f);
     
     
-    ignoreUnused(carRented);
+    ignoreUnused(myAge, hunger, rpm, netWeeklyProfit, newSongIdea, newRandomLetter, numOfTicketsBought);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
